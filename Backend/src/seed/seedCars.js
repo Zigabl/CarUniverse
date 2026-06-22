@@ -5,7 +5,7 @@ const Cars = require("../../models/Cars");
 
 const cars = [
   {
-    make: "Toyota",
+    brand: "Toyota",
     model: "Corolla",
     price: 20000,
     fuelType: "petrol",
@@ -15,7 +15,7 @@ const cars = [
     maintenanceCost: 7
   },
   {
-    make: "Volkswagen",
+    brand: "Volkswagen",
     model: "Golf",
     price: 18000,
     fuelType: "diesel",
@@ -25,7 +25,7 @@ const cars = [
     maintenanceCost: 6
   },
   {
-    make: "BMW",
+    brand: "BMW",
     model: "320d",
     price: 28000,
     fuelType: "diesel",
@@ -35,7 +35,7 @@ const cars = [
     maintenanceCost: 5
   },
   {
-    make: "Skoda",
+    brand: "Skoda",
     model: "Octavia",
     price: 22000,
     fuelType: "diesel",

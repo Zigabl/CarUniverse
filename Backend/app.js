@@ -1,11 +1,14 @@
 require("dotenv").config();
 const express = require("express");
 const session = require("express-session");
+const cors = require("cors");
 const MongoStore = require("connect-mongo").default;
 const recommendRoutes = require("./routes/recommend.routes");
 const authRoutes = require("./routes/auth.routes");
 
 const app = express();
+
+app.use(cors());
 
 app.use(express.json());
 
