@@ -6,7 +6,9 @@ export default function LandingHeader() {
   return (
     <View style={styles.header}>
         <View style={styles.headerLeft}>
-            <Text style={styles.headerTitle}>CarUniverse</Text>
+            <Pressable onPress={() => router.push('/')}> 
+              <Text style={styles.headerTitle}>CarUniverse</Text>
+            </Pressable>
         </View>
         <View style={styles.headerRight}>
             <Pressable style={styles.HeaderButton} onPress={() => router.push('/(auth)/register')}>

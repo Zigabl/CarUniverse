@@ -5,6 +5,7 @@ const cors = require("cors");
 const MongoStore = require("connect-mongo").default;
 const recommendRoutes = require("./routes/recommend.routes");
 const authRoutes = require("./routes/auth.routes");
+const carsRoutes = require("./routes/cars.routes");
 
 const app = express();
 
@@ -31,5 +32,6 @@ app.get("/", (req, res) => {
 
 app.use("/api/recommend", recommendRoutes);
 app.use("/api/auth", authRoutes);
+app.use("/api/cars", carsRoutes);
 
 module.exports = app;

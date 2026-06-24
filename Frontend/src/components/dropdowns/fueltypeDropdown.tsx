@@ -13,10 +13,8 @@ type Props = {
 };
 
 const fuelTypes = [
-  'diesel',
-  'petrol',
-  'electric',
-  'hybrid'  
+  'diesel motor',
+  'bencinski motor'
 ];
 
 export default function BrandDropdown({ value, onChange }: Props) {

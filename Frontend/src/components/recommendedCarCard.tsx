@@ -3,11 +3,9 @@ import { colors, globalStyles } from '../theme/global.style';
 const ImageBanner = require ('../../assets/images/mclarenPlaceholder.jpg');
 import { router } from "expo-router";
 
-type Car = { //just define it the way the car is structured in the backend response (you define what you rae allowed to use from the object)
-  brand: string;
-  model: string;
+type Car = { //just define it the way the car is structured in the backend response (you define what you are allowed to use from the object)
+  name: string;
   price: number;
-  description?: string; //? means optional
 };
 
 type Props = {
@@ -21,9 +19,8 @@ export default function RecommendedCarCard( { car }: Props) {
             <Image source={ImageBanner} style={styles.cardImage} />
         </View>
         <View style={styles.cardTextContainer}>
-            <Text style={styles.cardSubTittle}>{car.model}</Text>
-            <Text style={styles.cardTitle}>{car.brand}</Text>
-            <Text style={styles.cardDescription}>{car.description}</Text>
+            <Text style={styles.cardTitle}>{car.name}</Text>
+            <Text style={styles.carPrice}>{car.price}$</Text>
         </View>
     </View>
   );
@@ -60,18 +57,17 @@ const styles = StyleSheet.create({
     height: '100%', 
   },
   cardTitle: {
-    fontSize: 17,
+    fontSize: 12,
     fontWeight: 'bold',
     color: colors.primaryText,
     marginBottom: 5,
   },
-  cardSubTittle: {
-    fontSize: 13,
-    color: colors.mutedtext,
-    marginBottom: 3,
-  },
-  cardDescription: {
+  carPrice: {
+    position: 'absolute',
+    bottom: 0,
+    right: 0,
     fontSize: 14,
-    color: colors.mutedtext,
+    color: colors.Accent,
+
   },
 });

@@ -13,10 +13,8 @@ type Props = {
 };
 
 const transmissionTypes = [
-  'automatic',
-  'manual',
-  'sequential',
-  'semiAutomatic'
+  'ročni menjalnik',
+  'avtomatski menjalnik'
 ];
 
 export default function BrandDropdown({ value, onChange }: Props) {

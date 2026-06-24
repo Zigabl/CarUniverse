@@ -22,12 +22,14 @@
   "homepage": "https://github.com/Zigabl/CarUniverse#readme",
   "dependencies": {
     "bcrypt": "^6.0.0",
+    "cheerio": "^1.2.0",
     "connect-mongo": "^6.0.0",
     "cors": "^2.8.6",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
     "express-session": "^1.19.0",
-    "mongoose": "^9.7.0"
+    "mongoose": "^9.7.0",
+    "playwright": "^1.61.0"
   },
   "devDependencies": {
     "nodemon": "^3.1.14"

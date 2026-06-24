@@ -12,15 +12,15 @@ export default function LandingFooter() {
 }
 
 const styles = StyleSheet.create({
-    footer: {
-        backgroundColor: colors.primaryText,
-        flexDirection: 'column',
-        alignItems: 'center', 
-        height: 110,
-        paddingHorizontal: 18,
-        paddingVertical: 10,
-        marginTop: 30,
-    },
+  footer: {
+    backgroundColor: colors.primaryText,
+    flexDirection: 'column',
+    alignItems: 'center', 
+    height: 110,
+    paddingHorizontal: 18,
+    paddingVertical: 10,
+    marginTop: 30,
+  },
   footerTitle: {
     fontSize: 17,
     fontWeight: 'bold',

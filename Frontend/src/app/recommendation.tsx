@@ -18,17 +18,17 @@ import axios from 'axios';
 export default function AboutAppScreen() {
   const [loading, setLoading] = useState(false);
   const [price, setPrice] = useState(10000);
-  const [fuelType, setFuelType] = useState('petrol');
-  const [transmissionType, setTransmissionType] = useState('manual');
-  const [usage, setUsage] = useState('city');
+  const [fuelType, setFuelType] = useState('bencinski motor');
+  const [transmissionType, setTransmissionType] = useState('avtomatski menjalnik');
   const [recommendedCars, setRecommendedCars] = useState<Recommendation[]>([]);
 
-  type Car = { //type defining is super important
+  type Car = { //type defining is super important (backend send us a full car but we only choose to save these three details about it)
     _id: string;
-    brand: string;
-    model: string;
+    name: string;
+    registration: string,
+    fuelType: string,
+    transmission: string,
     price: number;
-    description?: string;
   };
 
   type Recommendation = {
@@ -46,8 +46,7 @@ export default function AboutAppScreen() {
         {
           price,
           fuelType,
-          transmissionType,
-          usage,
+          transmissionType
         }
       );
 
@@ -61,13 +60,17 @@ export default function AboutAppScreen() {
     }
   };
 
+
   return (
     <FlatList
       style={globalStyles.container}
       data={recommendedCars}
-      keyExtractor={(item, index) => index.toString()}
-      renderItem={({ item }) => (
+      renderItem={({ item }) => ( //goes trough all items in recommended cars and makes a new component for every one of them
+        <Pressable 
+        onPress={() => router.push(`/car/${item.car._id}`)}
+        > 
         <RecommendedCarCard car={item.car} />
+        </Pressable>
       )}
       ListHeaderComponent={
         <>
@@ -82,7 +85,6 @@ export default function AboutAppScreen() {
             <PriceSlider value={price} onChange={setPrice} />
             <FuelTypeDropdown value={fuelType} onChange={setFuelType}/>
             <TransmissionTypeDropdown value={transmissionType} onChange={setTransmissionType}/>
-            <UsageDropdown value={usage} onChange={setUsage}/>
             <Pressable style={styles.submitButton} onPress={submitPreferences}>
             <Text style={globalStyles.buttonText2}>{loading ? "Finding cars..." : "Submit"}</Text>
             </Pressable>
